@@ -14,15 +14,24 @@ public class CountingDuckFactory extends AbstractDuckFactory{
         return new QuackCounter(new RubberDuck());
     }
 
-    public void createADuck(String duck){
+    @Override
+    public Quackable createRedheadDuck() {
+        return new QuackCounter(new RedheadDuck());
+    }
+
+    public Quackable createADuck(String duck){
+        Quackable returnedduck=null;
         if(duck=="MallardDuck"){
-            createDuckCall();
+            returnedduck=createMallardDuck();
         }else if(duck=="RubberDuck"){
-            createRubberDuck();
+            returnedduck=createRubberDuck();
         }else if(duck=="DuckCall"){
-            createDuckCall();
+            returnedduck=createDuckCall();
+        }else if(duck=="RedheadDuck"){
+            returnedduck=createRedheadDuck();
         }else{
-            System.out.println("No such duck");
+            returnedduck=createRedheadDuck();
         }
+        return returnedduck;
     }
 }

@@ -3,5 +3,7 @@ public abstract class AbstractDuckFactory {
     public abstract Quackable createDuckCall();
     public abstract Quackable createRubberDuck();
 
-    public abstract void createADuck(String duck);
+    public abstract Quackable createRedheadDuck();
+
+    public abstract Quackable createADuck(String duck);
 }

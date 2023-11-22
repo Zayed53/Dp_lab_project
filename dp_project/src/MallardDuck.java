@@ -1,4 +1,4 @@
-public class MallardDuck implements Quackable, QuackObservable{
+public class MallardDuck implements Quackable{
     Observable observable;
 
     public MallardDuck(){

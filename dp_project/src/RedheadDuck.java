@@ -1,14 +1,13 @@
-public class GooseAdapter implements Quackable{
-    Goose goose;
-
+public class RedheadDuck implements Quackable, QuackObservable{
     Observable observable;
-    public GooseAdapter(Goose goose){
-        this.goose=goose;
+
+    public RedheadDuck(){
         this.observable=new Observable(this);
     }
+
     @Override
     public void quack() {
-        goose.honk();
+        System.out.println("Sharp Quack");
         notifyObservers();
     }
 

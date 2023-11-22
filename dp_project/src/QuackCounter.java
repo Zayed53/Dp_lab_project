@@ -12,7 +12,17 @@ public class QuackCounter implements Quackable{
         quackCount++;
     }
 
-    public int numberOfQuack(){
+    public static int numberOfQuack(){
         return quackCount;
+    }
+
+    @Override
+    public void registerObserver(Observer observer) {
+        duck.registerObserver(observer);
+    }
+
+    @Override
+    public void notifyObservers() {
+        duck.notifyObservers();
     }
 }
