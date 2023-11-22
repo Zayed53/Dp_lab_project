@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class Flock implements Quackable, QuackObservable{
+public class Flock implements Quackable{
     ArrayList quackers = new ArrayList();
 
     public void add(Quackable quacker){
@@ -18,7 +18,11 @@ public class Flock implements Quackable, QuackObservable{
 
     @Override
     public void notifyObservers() {
-
+        Iterator iterator = quackers.iterator();
+        while (iterator.hasNext()) {
+            Quackable quacker = (Quackable)iterator.next();
+            quacker.notifyObservers();
+        }
     }
 
     @Override
